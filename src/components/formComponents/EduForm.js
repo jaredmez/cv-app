@@ -2,7 +2,24 @@ import React from 'react'
 
 function EduForm() {
     return (
-        <h2>EDUCATION SECTION</h2>
+        <form id="edu-form">
+            <input 
+                type="text" 
+                name="school" 
+                placeholder="School"
+            /><br/>
+            <input 
+                type="text" 
+                name="major" 
+                placeholder="Major"
+            /><br/>
+            <input 
+                type="tel" 
+                name="year" 
+                placeholder="Year"
+            /><br/>
+            <button>Save</button>
+        </form>
     )
 }
 

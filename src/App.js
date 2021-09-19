@@ -10,8 +10,8 @@ function App() {
       <header className="cv-header"> Cover Letter App </header>
       <div className="main-page-body">
         <PersonalInfoCtn />
-        <WorkExpCtn />
         <EduCtn />
+        <WorkExpCtn />
       </div>    
 
     </div>

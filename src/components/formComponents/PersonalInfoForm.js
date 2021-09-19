@@ -14,7 +14,7 @@ function PersonalInfoForm() {
                 placeholder="Email"
             /><br/>
             <input 
-                type="tel" 
+                type="text" 
                 name="number" 
                 placeholder="Number"
             /><br/>
