@@ -95,13 +95,17 @@ button:active {
 }
 
 /* -------styling for paragraphs (after input is save by user)----- */
-#personal-input {
+#personal-input,
+#edu-input,
+#workExp-input {
   display: flex;
   flex-wrap: wrap;
   justify-content:left;
   align-items: center;
 }
-#personal-input p{
+#personal-input p,
+#edu-input p,
+#workExp-input p{
   width: 100%;
   margin-bottom: 10px;
   background:rgb(200, 204, 212);
