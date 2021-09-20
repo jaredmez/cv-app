@@ -1,4 +1,4 @@
-#CV Application
+# CV Application
 
 ### General Info
 I created a resume template to practice implementing the React library. 
