@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .cv-header {
   background-color: #282c34;
   min-height: 100px;
@@ -17,7 +18,7 @@
 .main-page-body {
   border: 1px solid rgb(230, 214, 214);
   border-radius: 10px;
-  margin: 50px 100px;
+  margin: 50px auto;
   padding: 30px 20px;
   background-color: rgba(191, 230, 248, .5);
   max-width: 825px;
@@ -115,5 +116,22 @@ button:active {
 span {
   font-size: 14px;
   font-weight:300;
+}
+
+#add-exp-btn {
+  background: none;
+  border: none;
+  color: black;
+  display: inline-block;
+}
+
+#add-exp-btn:hover {
+  color: rgb(63, 61, 61);
+  cursor: pointer;
+}
+
+#experience-form,
+#workExp-input {
+  margin-bottom: 10px;
 }
 

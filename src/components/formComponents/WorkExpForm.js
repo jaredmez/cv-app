@@ -67,12 +67,12 @@ class WorkExpForm extends React.Component {
         } else {
             return (
                 <div id="workExp-input">
-                <p><span>Position:</span>  {this.state.position}</p>
-                <p><span>Company:</span>  {this.state.company}</p>
-                <p><span>City:</span>  {this.state.city}</p>
-                <p><span>From:</span>  {this.state.from}</p>
-                <p><span>To:</span>  {this.state.to}</p>
-                <button className="edit-btn" onClick={this.handleSubmit}>edit</button>
+                    <p><span>Position:</span>  {this.state.position}</p>
+                    <p><span>Company:</span>  {this.state.company}</p>
+                    <p><span>City:</span>  {this.state.city}</p>
+                    <p><span>From:</span>  {this.state.from}</p>
+                    <p><span>To:</span>  {this.state.to}</p>
+                    <button className="edit-btn" onClick={this.handleSubmit}>edit</button>
                 </div>
             )
         }     
