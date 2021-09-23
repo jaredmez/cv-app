@@ -1,68 +1,56 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-class PersonalInfoForm extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            name: "",
-            email: "",
-            number: "",
-            isEdit: true
-        };
+function PersonalInfoForm() {
+
+
+    const [state, setState] = useState({name: "", email: "", number: ""});
+    const [isEdit, setEdit] = useState(true);
+
+    const handleChange = (e) => {
+        setState({...state, [e.target.name]: e.target.value})       
     }
 
-    handleChange = (e) => {
-        this.setState({[e.target.name]: e.target.value})       
-    }
-
-    handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        this.setState({isEdit: !this.state.isEdit})
+        setEdit(!isEdit)
     }
 
-    render() {
-        if (this.state.isEdit) {
-            console.log('yolo');
-            return (
-                <form id="personal-form" onSubmit={this.handleSubmit}>
-                    <input 
-                        type="text" 
-                        name="name" 
-                        placeholder="Name"
-                        value={this.state.name}
-                        onChange={this.handleChange}
-                    /><br/>
-                    <input 
-                        type="text" 
-                        name="email" 
-                        placeholder="Email"
-                        value={this.state.email}
-                        onChange={this.handleChange}
-                    /><br/>
-                    <input 
-                        type="text" 
-                        name="number" 
-                        placeholder="Number"
-                        value={this.state.number}
-                        onChange={this.handleChange} 
-                    /><br/>
-                    <button>Save</button>
-                </form>
-            )
-        } else {
-            return (
-                <div id="personal-input">
-                    <p><span>Name:</span>  {this.state.name}</p>
-                    <p><span>Email:</span>  {this.state.email}</p>
-                    <p><span>Number:</span>  {this.state.number}</p>
-                    <button className="edit-btn" onClick={this.handleSubmit}>edit</button>
-                </div>
-            )
-        }
-
-
-
-
+    if (isEdit) {
+        return (
+            <form id="personal-form" onSubmit={handleSubmit}>
+                <input 
+                    type="text" 
+                    name="name" 
+                    placeholder="Name"
+                    value={state.name}
+                    onChange={handleChange}
+                /><br/>
+                <input 
+                    type="text" 
+                    name="email" 
+                    placeholder="Email"
+                    value={state.email}
+                    onChange={handleChange}
+                /><br/>
+                <input 
+                    type="text" 
+                    name="number" 
+                    placeholder="Number"
+                    value={state.number}
+                    onChange={handleChange} 
+                /><br/>
+                <button>Save</button>
+            </form>
+        )
+    } else {
+        return (
+            <div id="personal-input">
+                <p><span>Name:</span>  {state.name}</p>
+                <p><span>Email:</span>  {state.email}</p>
+                <p><span>Number:</span>  {state.number}</p>
+                <button className="edit-btn" onClick={handleSubmit}>edit</button>
+            </div>
+        )
     }
 
 }

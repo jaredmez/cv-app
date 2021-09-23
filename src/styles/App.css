@@ -118,14 +118,16 @@ span {
   font-weight:300;
 }
 
-#add-exp-btn {
+#add-exp-btn,
+#del-exp-btn {
   background: none;
   border: none;
   color: black;
   display: inline-block;
 }
 
-#add-exp-btn:hover {
+#add-exp-btn:hover,
+#del-exp-btn:hover {
   color: rgb(63, 61, 61);
   cursor: pointer;
 }
@@ -135,3 +137,7 @@ span {
   margin-bottom: 10px;
 }
 
+.exp-btns {
+  display: flex;
+  justify-content: space-between;
+}

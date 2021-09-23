@@ -1,41 +1,41 @@
-import React from 'react'
+import React, {useState} from 'react'
 import WorkExpForm from './formComponents/WorkExpForm'
 
-class WorkExpCtn extends React.Component{
-    constructor() {
-        super();
-        this.state = {
-            forms: 1
+function WorkExpCtn(){
+    const [formCount, setForm] = useState(1);
+
+    const addWorkForm = () => {
+        setForm(formCount + 1);
+    }
+    const delWorkForm = () => {
+        if (formCount === 1) {
+            return;
         }
+        setForm(formCount - 1);
     }
 
-    addWorkFrom = () => {
-        this.setState(prevState => {
-            return {forms: prevState.forms + 1}
-        })
-        console.log('hmmm')
+    let workForms = [];
+    for(let i = 0; i < formCount; i++) {
+        console.log(i);
+        workForms.push(<WorkExpForm />);
     }
-
-    render() {
-        const workForms = [];
-        for(let i = 0; i < this.state.forms; i++) {
-            console.log(i);
-            workForms.push(<WorkExpForm />);
-        }
-        console.log(workForms);
-        return (
-        <div className="experience-ctn">
-            <h3>Experience</h3>
-            <div>{workForms}</div>
-            <div>
-                <div 
-                    id="add-exp-btn"
-                    onClick={this.addWorkFrom}
-                >+ add</div>
+    return (
+    <div className="experience-ctn">
+        <h3>Experience</h3>
+        <div>{workForms}</div>
+        <div className="exp-btns">
+            <div 
+                id="add-exp-btn"
+                onClick={addWorkForm}
+            >+ add</div>
+            <div
+                id="del-exp-btn"
+                onClick={delWorkForm}
+            >-delete
             </div>
         </div>
-        )
-    }
+    </div>
+    )
 }
 
 export default WorkExpCtn
